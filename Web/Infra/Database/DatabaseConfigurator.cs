@@ -22,8 +22,7 @@ namespace AgileTickets.Web.Infra.Database
         public static FluentConfiguration SetEntities()
         {
             return Fluently.Configure().Database(
-                            SQLiteConfiguration.Standard.UsingFile(Path.GetTempPath() + @"\agiletickets.db").FormatSql().ShowSql()
-                            //MySQLConfiguration.Standard.ConnectionString("Server=localhost;Database=agileticketscsharp;Uid=root;Pwd=;")
+                            SQLiteConfiguration.Standard.UsingFile(Path.GetTempPath() + @"\agiletickets.db").FormatSql().ShowSql()                            
                         ).Mappings(m =>
                         {
                             m.FluentMappings.AddFromAssemblyOf<DatabaseConfigurator>();
