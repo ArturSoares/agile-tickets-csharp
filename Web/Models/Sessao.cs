@@ -13,12 +13,11 @@ namespace AgileTickets.Web.Models
         public virtual int IngressosReservados { get; set; }
         public virtual DateTime Inicio { get; set; }
 
-        public virtual bool PodeReservar(int NumeroDeIngressos)
+        public virtual bool PodeReservar(int ingressosDesejados)
         {
-            int sobraram = IngressosDisponiveis - NumeroDeIngressos;
-            bool naoTemEspaco = sobraram < 0;
-
-            return !naoTemEspaco;
+            int ingressosRestantes = IngressosDisponiveis - ingressosDesejados;
+            
+            return ingressosRestantes >= 0;
         }
 
         public virtual int IngressosDisponiveis
