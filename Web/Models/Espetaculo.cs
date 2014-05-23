@@ -38,8 +38,15 @@ namespace AgileTickets.Web.Models
         public virtual IList<Sessao> CriaSessoes(DateTime inicio, DateTime fim, Periodicidade periodicidade)
         {
             IList<Sessao> sessoes = new List<Sessao>();
-            var quantidadeDeSessoes = DateTime.Compare(fim, inicio);
-            return new List<Sessao>();
+            int quantidadeDeSessoes = (fim - inicio).Days;
+
+            for (int i = 0; i <= quantidadeDeSessoes; i++)
+            {
+                var sessao = new Sessao();
+                sessoes.Add(sessao);
+            }
+
+            return sessoes;
         }
     }
 }

@@ -33,7 +33,7 @@ namespace Tests.Models
 
             var listaDeSessoes = espetaculo.CriaSessoes(inicio, fim, peridiocidade);
 
-            Assert.AreEqual(listaDeSessoes.Count, 3);
+            Assert.AreEqual(3, listaDeSessoes.Count);
         }
     }
 }
