@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -36,8 +37,9 @@ namespace AgileTickets.Web.Models
          */
         public virtual IList<Sessao> CriaSessoes(DateTime inicio, DateTime fim, Periodicidade periodicidade)
         {
-            // ALUNO: Não apague esse metodo. Esse sim será usado no futuro! ;)
-            return null;
+            IList<Sessao> sessoes = new List<Sessao>();
+            var quantidadeDeSessoes = DateTime.Compare(fim, inicio);
+            return new List<Sessao>();
         }
     }
 }
